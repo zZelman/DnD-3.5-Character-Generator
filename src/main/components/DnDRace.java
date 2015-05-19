@@ -2,7 +2,7 @@ package main.components;
 
 import java.util.Arrays;
 
-public class Race {
+public class DnDRace {
     private String name;
     private String[] dissalowedAlignment;
     private String[] dissalowedClass;
@@ -12,14 +12,14 @@ public class Race {
     private String[] skills;
     private String[] stats;
 
-    public Race(String name,
-                String[] dissalowedAlignment,
-                String[] dissalowedClass,
-                String[] specials,
-                String size,
-                String speed,
-                String[] skills,
-                String[] stats) {
+    public DnDRace(String name,
+                   String[] dissalowedAlignment,
+                   String[] dissalowedClass,
+                   String[] specials,
+                   String size,
+                   String speed,
+                   String[] skills,
+                   String[] stats) {
         this.name = name;
         this.dissalowedAlignment = dissalowedAlignment;
         this.dissalowedClass = dissalowedClass;

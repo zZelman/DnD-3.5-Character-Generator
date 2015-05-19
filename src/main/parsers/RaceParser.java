@@ -1,17 +1,27 @@
 package main.parsers;
 
-import main.components.Race;
+import main.components.DnDRace;
 import org.ini4j.Ini;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class RaceParser extends Parser {
-    public static Race parse(String fileName) throws IOException {
+    public static DnDRace parse(String fileName) throws IOException {
         Ini ini = new Ini(new File(fileName));
 
-        String name = "Dwarf";
+        // build a list of race names
+        ArrayList<String> raceNames = new ArrayList<String>();
+        for (String sectionName : ini.keySet()) {
+            raceNames.add(sectionName);
+        }
 
+        // choose random race
+        String name = chooseRandomRace(raceNames);
+
+        // get data from choosen race name
         String getAlignment = ini.get(name, "DissalowedAlignment");
         String getClasses = ini.get(name, "DissalowedClasses");
         String getSpecials = ini.get(name, "Specials");
@@ -28,7 +38,8 @@ public class RaceParser extends Parser {
         String[] skills = getSkills.split(DELIMITER_COMPOUND_VALUE);
         String[] stats = getStats.split(DELIMITER_COMPOUND_VALUE);
 
-        Race r = new Race(name,
+        // construct race object
+        DnDRace r = new DnDRace(name,
                 dissalowedAlignment,
                 dissalowedClasses,
                 specials,
@@ -38,5 +49,15 @@ public class RaceParser extends Parser {
                 stats);
 
         return r;
+    }
+
+    private static String chooseRandomRace(ArrayList<String> raceNames) {
+        int low = 0;
+        int high = raceNames.size();
+
+        Random r = new Random();
+        int chooice = r.nextInt(high - low) + low;
+
+        return raceNames.get(chooice);
     }
 }
