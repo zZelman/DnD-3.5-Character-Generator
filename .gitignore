@@ -5,3 +5,5 @@
 # doxygen things
 doc
 
+# scrips
+*.sh
