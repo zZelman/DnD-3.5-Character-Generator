@@ -1,0 +1,146 @@
+
+
+
+	PickRace{
+		#Get race list from ini file
+		
+		#pick a random one
+		
+		#return race
+	}
+	
+	public Race(){
+		#race name
+		String myRace;
+		#alignments that are not allowed for this race
+		String[] DissalowedAlignment;
+		#classes that are not allowed for this race
+		String[] dissallowedClasses;
+		#special abilities the race gets
+		String[] Specials;
+	}
+	
+	PickClass (race myrace){
+		#Get class list from ini file
+		Classes = Get class list from ini file
+		#make a list for the acceptable classes
+		String[] acceptedClasses = new String[]
+		#parse through the class list to add to the list of acceptable classes
+		parse class list {
+			if class == myrace.acceptable{
+				#Make new list of acceptable classes
+				
+			}
+		}
+		
+		#pick a random one from the acceptable choices
+		
+		#return class
+	
+	}
+	
+	public DndClass(){
+		#Class name
+		String myClass;
+		#alignments that are not allowed for this class;
+		String[] DissalowedAlignment;
+		#Stat Preference
+		String[] Statorder;
+		
+		#roll for them there stats
+		int[] stats = RollForStats(Statorder);
+		
+		#Hit die
+		int hitDie;
+		#base attack bonuses at each level
+		int [][] baseAttackBonus;
+		#saves
+		int [][] Saves;
+		#list of skills
+		String [] Skills;
+		#List of special shit
+		String [] Special;
+		
+		int[] RollForStats(String[] Statorder){
+			#Stats array
+			int[] stats = new int[6];
+			#roll for stats
+			
+			#arrange from lowest to highest
+			
+			#place them in reccomended location 
+				#LATER :: potentially garble locations to get a more unique character
+			
+			#return the int[] Stats;
+		
+		}
+		
+		
+	}
+	
+	String PickAlignment(Race myrace, DndClass myclass){
+		#list of all of the alignments 
+		String[] AlignmentList = {"NG","NN","NE","LG","LN","LE","CG","CN","CE"};
+		#list of acceptable alignments
+		String[] AcceptableAlignments = new String[9]
+		#walkthrough int for location in acceptable alignments
+		int f = 0;
+		For(int i = 0; i < 10; ++i){
+			#if it passes through race
+			if(	)
+				#if it passes through class
+				if( )
+					#add to the lsit of acceptable
+					AcceptableAlignments[f] = AlignmentList[i];
+					#increment location in acceptable alignments
+					f++;
+		}
+		#pick a random acceptable alignment
+		
+		#return alignment
+		
+	}
+	
+	Feats PickFeats(Race myRace, DndClass myClass, String myAlignment){
+		#get the list of feats
+		
+		#make a list for acceptable feats
+		
+		#check through the entire list of feats for acceptable feats based off of
+		For(each feat){
+			#check to see if it is acceptable for the race
+			if(feat.racecheck(myRace))
+				#check to see if it is acceptable for the class 
+				#THIS INCLUDES STAT MODIFYERS NECESARRY FOR THAT FEAT
+				if(feat.classcheck(myClass))
+					#check to see if it is acceptable for the alignment
+					if(feat.alignmentcheck(myAlignment))
+						#add feat to the list of acceptable feats
+		}
+		#pick a feat as many times as necesarry
+		
+		#return feat list
+		
+	}
+	
+	Special GetSpecials(Race myRace, DndClass myClass){
+		#make a list of all the specials
+		
+		#pull all the specials from racials
+		
+		#pull all the specials from class
+		
+		#return specials
+	}
+	
+	main(){
+		#get input on level
+		int level = INPUT;
+		Race myrace = new PickRace()
+		DndClass myclass = new PickClass(myrace)
+		String myalignmnet = new PickAlignment(myrace, myclass)
+		Feats myFeats = PickFeats(myrace, myclass, myalignment, level);
+		Special mySpecials = GetSpecials(myrace, myclass);
+		
+	}
+	
