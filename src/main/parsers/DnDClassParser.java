@@ -51,6 +51,24 @@ public class DnDClassParser extends Parser {
         String[] spellsKnown = getSpellsKnown.split(DELIMITER_COMPOUND_VALUE);
         String[] weaponProficiency = getWeaponProficiency.split(DELIMITER_COMPOUND_VALUE);
         String[] armorProficiency = getArmorProficiency.split(DELIMITER_COMPOUND_VALUE);
+
+        DnDClass c = new DnDClass(name,
+                dissalowedAlignment,
+                statorder,
+                hitDie,
+                baseAttackBonus,
+                saves,
+                skills,
+                special,
+                skillpoints,
+                skillpointsLevel,
+                gold,
+                spellsPerDay,
+                spellsKnown,
+                weaponProficiency,
+                armorProficiency);
+
+        return c;
     }
 
     private static String chooseRandomClass(ArrayList<String> classNames, DnDRace race) {
@@ -58,8 +76,8 @@ public class DnDClassParser extends Parser {
         int high = classNames.size();
 
         Random r = new Random();
-        int chooice = r.nextInt(high - low) + low;
+        int choice = r.nextInt(high - low) + low;
 
-        return classNames.get(chooice);
+        return classNames.get(choice);
     }
 }

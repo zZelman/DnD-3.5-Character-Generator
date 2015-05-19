@@ -55,8 +55,8 @@ public class DnDRaceParser extends Parser {
         int high = raceNames.size();
 
         Random r = new Random();
-        int chooice = r.nextInt(high - low) + low;
+        int choice = r.nextInt(high - low) + low;
 
-        return raceNames.get(chooice);
+        return raceNames.get(choice);
     }
 }

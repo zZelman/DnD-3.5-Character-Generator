@@ -1,6 +1,5 @@
 package main;
 
-import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import main.components.DnDClass;
 import main.components.DnDRace;
 import main.parsers.DnDClassParser;
@@ -32,7 +31,7 @@ public class Player {
 
     private void chooseClass() {
         try {
-            dndClass = DnDClassParser.parse(Parser.ROOT_PATH + Parser.RACE_FILE);
+            dndClass = DnDClassParser.parse(Parser.ROOT_PATH + "sample.ini", dndRace);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,8 +40,9 @@ public class Player {
     @Override
     public String toString() {
         return "Player{" +
-                "level=" + level +
-                ", dndRace=" + dndRace +
+                "\n\tlevel=" + level +
+                ",\n\tdndRace=" + dndRace +
+                ",\n\tdndClass=" + dndClass +
                 '}';
     }
 }
