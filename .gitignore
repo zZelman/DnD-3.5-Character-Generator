@@ -7,8 +7,6 @@
 !README.md
 
 !src/
-!src/main/*
-!src/test/*
 
 !res/
 !res/*
