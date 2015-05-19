@@ -7,15 +7,27 @@ public class Race {
     private String[] dissalowedAlignment;
     private String[] dissalowedClass;
     private String[] specials;
+    private String size;
+    private String speed;
+    private String[] skills;
+    private String[] stats;
 
     public Race(String name,
                 String[] dissalowedAlignment,
                 String[] dissalowedClass,
-                String[] specials) {
+                String[] specials,
+                String size,
+                String speed,
+                String[] skills,
+                String[] stats) {
         this.name = name;
         this.dissalowedAlignment = dissalowedAlignment;
         this.dissalowedClass = dissalowedClass;
         this.specials = specials;
+        this.size = size;
+        this.speed = speed;
+        this.skills = skills;
+        this.stats = stats;
     }
 
     @Override
@@ -25,6 +37,10 @@ public class Race {
                 ", dissalowedAlignment=" + Arrays.toString(dissalowedAlignment) +
                 ", dissalowedClass=" + Arrays.toString(dissalowedClass) +
                 ", specials=" + Arrays.toString(specials) +
+                ", size='" + size + '\'' +
+                ", speed='" + speed + '\'' +
+                ", skills=" + Arrays.toString(skills) +
+                ", stats=" + Arrays.toString(stats) +
                 '}';
     }
 }

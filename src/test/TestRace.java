@@ -16,7 +16,7 @@ public class TestRace {
         RaceParser rp = new RaceParser();
         Race r = null;
         try {
-            r = rp.parse(Parser.rootPath + Parser.raceFile);
+            r = rp.parse(Parser.ROOT_PATH + Parser.RACE_FILE);
         } catch (IOException e) {
             e.printStackTrace();
             assertTrue("Could not find race file", false);

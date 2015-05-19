@@ -7,19 +7,36 @@ import java.io.File;
 import java.io.IOException;
 
 public class RaceParser extends Parser {
-    public Race parse(String fileName) throws IOException {
+    public static Race parse(String fileName) throws IOException {
         Ini ini = new Ini(new File(fileName));
 
-        String name = "Human";
+        String name = "Dwarf";
 
-        String getAlignment = ini.get("Human", "DissalowedAlignment");
-        String getClasses = ini.get("Human", "DissalowedClasses");
-        String getSpecials = ini.get("Human", "Specials");
+        String getAlignment = ini.get(name, "DissalowedAlignment");
+        String getClasses = ini.get(name, "DissalowedClasses");
+        String getSpecials = ini.get(name, "Specials");
+        String getSize = ini.get(name, "Size");
+        String getSpeed = ini.get(name, "Speed");
+        String getSkills = ini.get(name, "Skills");
+        String getStats = ini.get(name, "Stats");
 
-        String[] dissalowedAlignment = getAlignment.split(delimiter);
-        String[] dissalowedClasses = getClasses.split(delimiter);
-        String[] specials = getSpecials.split(delimiter);
+        String[] dissalowedAlignment = getAlignment.split(DELIMITER_COMPOUND_VALUE);
+        String[] dissalowedClasses = getClasses.split(DELIMITER_COMPOUND_VALUE);
+        String[] specials = getSpecials.split(DELIMITER_COMPOUND_VALUE);
+        String size = getSize;
+        String speed = getSpeed;
+        String[] skills = getSkills.split(DELIMITER_COMPOUND_VALUE);
+        String[] stats = getStats.split(DELIMITER_COMPOUND_VALUE);
 
-        return new Race(name, dissalowedAlignment, dissalowedClasses, specials);
+        Race r = new Race(name,
+                dissalowedAlignment,
+                dissalowedClasses,
+                specials,
+                size,
+                speed,
+                skills,
+                stats);
+
+        return r;
     }
 }
