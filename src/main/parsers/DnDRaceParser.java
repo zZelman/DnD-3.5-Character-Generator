@@ -3,14 +3,13 @@ package main.parsers;
 import main.components.DnDRace;
 import org.ini4j.Ini;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class RaceParser extends Parser {
+public class DnDRaceParser extends Parser {
     public static DnDRace parse(String fileName) throws IOException {
-        Ini ini = new Ini(new File(fileName));
+        Ini ini = openIni(fileName);
 
         // build a list of race names
         ArrayList<String> raceNames = new ArrayList<String>();

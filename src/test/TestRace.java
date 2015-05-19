@@ -2,7 +2,7 @@ package test;
 
 import main.components.DnDRace;
 import main.parsers.Parser;
-import main.parsers.RaceParser;
+import main.parsers.DnDRaceParser;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class TestRace {
 
     @Test
     public void testParse() {
-        RaceParser rp = new RaceParser();
+        DnDRaceParser rp = new DnDRaceParser();
         DnDRace r = null;
         try {
             r = rp.parse(Parser.ROOT_PATH + Parser.RACE_FILE);

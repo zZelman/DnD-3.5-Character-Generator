@@ -1,9 +1,11 @@
 package main;
 
+import com.sun.org.apache.bcel.internal.classfile.ClassParser;
 import main.components.DnDClass;
 import main.components.DnDRace;
+import main.parsers.DnDClassParser;
 import main.parsers.Parser;
-import main.parsers.RaceParser;
+import main.parsers.DnDRaceParser;
 
 import java.io.IOException;
 
@@ -22,14 +24,18 @@ public class Player {
 
     private void chooseRace() {
         try {
-            dndRace = RaceParser.parse(Parser.ROOT_PATH + Parser.RACE_FILE);
+            dndRace = DnDRaceParser.parse(Parser.ROOT_PATH + Parser.RACE_FILE);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void chooseClass() {
-
+        try {
+            dndClass = DnDClassParser.parse(Parser.ROOT_PATH + Parser.RACE_FILE);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
