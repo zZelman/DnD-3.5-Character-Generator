@@ -4,8 +4,8 @@ import main.components.Race;
 
 public class Player {
     // things that make up this player
-    int level;
-    Race race;
+    private int level;
+    private Race race;
 
     public Player(int level) {
         this.level = level;
@@ -14,6 +14,14 @@ public class Player {
     }
 
     private void chooseRace() {
-        race = new Race();
+//        race = new Race();
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "level=" + level +
+                ", race=" + race +
+                '}';
     }
 }

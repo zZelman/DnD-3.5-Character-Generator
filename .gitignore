@@ -7,3 +7,7 @@ doc
 
 # scrips
 *.sh
+
+# local build dir
+out/
+res/Races.ini
