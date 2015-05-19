@@ -2,6 +2,7 @@
 *
 
 # exceptions
+!*.java
 !.gitignore
 !README.md
 
