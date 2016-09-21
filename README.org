@@ -1,0 +1,4 @@
+#+TITLE: DnD-3.5-Character-Generator
+#+AUTHOR: Kyle Avrett
+
+This is a project that I worked on in my spare time during college. It is a D&D 3.5 character generator. The premise is that you and your friends are sitting somewhere doing nothing, waiting maybe, and you want to do a pick up game of D&D. Well, since creating a character is a long and personal process, involving dice and books, it would be nice if you could just push a button and have a character made for you. Originally, the app would ask you for your character's level, and optionally ask you for a wanted class and build you a character using a cascading choice algorithm where the previous decision in making the character had a chance to affect the next one. But the semester ran out and this project was never finished. I keep this repository alive because it is still a really good idea that I might want to come back to in the future.
